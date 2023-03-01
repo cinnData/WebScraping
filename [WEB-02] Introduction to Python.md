@@ -1,4 +1,4 @@
-# [WEB-2] Introduction to Python
+# [WEB-02] Introduction to Python
 
 ## What is Python?
 
