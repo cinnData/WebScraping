@@ -65,7 +65,7 @@ Out[7]: 'Iese Business School'
 You can **split a string** with the method `split`. The split can be based on any **separator**. Two examples follow.
 
 ```
-iese.split(' ')
+In [8]: iese.split(' ')
 Out[8]: ['IESE', 'Business', 'School']
 ```
 
