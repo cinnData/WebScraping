@@ -230,26 +230,19 @@ In [24]: soup.find_all('div', text='Data Visualization')
 Out[24]: [<div class="course">Data Visualization</div>]
 ```
 
-The search string can be a **regular expression** instead of a fixed string, which gives you extra power. Note that you have to set the text value as `re.compile(expr)`. For instance, to find the elements whose text starts with the word 'Data', you can use: 
+The search string can be a **regular expression** instead of a fixed string, which gives you extra power. Note that you have to set the text value as `re.compile(expr)`. For instance, to find the elements whose text contains the substring 'Data', you can use: 
 
 ```
 In [25]: import re
-    ...: soup.find_all('div', text=re.compile('Data \w+'))
+    ...: soup.find_all('div', text=re.compile('Data'))
 Out[25]: [<div class="course">Data Visualization</div>]
-```
-
-If you wish to include a potential course called just 'Data':
-
-```
-In [26]: soup.find_all('div', text=re.compile('Data*'))
-Out[26]: [<div class="course">Data Visualization</div>]
 ```
 
 This approach can also be used to shorten the `class` value:
 
 ```
-In [27]: soup.find_all('div', re.compile('co*'))
-Out[27]: [<div class="course">Data Visualization</div>]
+In [26]: soup.find_all('div', re.compile('co'))
+Out[26]: [<div class="course">Data Visualization</div>]
 ```
 
 ## Homework
@@ -261,5 +254,3 @@ html_str = open('path/iese.html', mode='r').read()
 ```
 
 This string is much longer than in our toy example, and contains tags with new names, such as `<ul>`, `<li>` and `<script>`.  Use the tools discussed in this lecture to parse `html_str`, extracting three lists: (a) a list of the professors' names (*e.g*. 'Miguel Ángel Canela'), (b) a list of the professors' descriptions (eg 'Associate Professor of Managerial Decision Sciences'), and (c) a list of the links to the professors' individual pages (eg 'https://www.iese.edu/faculty-research/faculty/miguel-angel-canela'). 
-
-
