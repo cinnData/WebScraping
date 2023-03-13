@@ -1,4 +1,4 @@
-# Example - Best restaurants in Barcelona according to TripAdvisor [1]
+# Project - Best restaurants in Barcelona according to TripAdvisor [1]
 
 ## Introduction
 
