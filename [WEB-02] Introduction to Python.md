@@ -343,8 +343,8 @@ Not equal
 This looks like Excel, right? The Excel version would be `IF(condition, action1, action2)`. An even longer version includes an `elif` (else if) clause:
 
 ```
-if condition: action1
-elif: action2
+if condition1: action1
+elif condition2: action2
 else: action3
 ```
 
