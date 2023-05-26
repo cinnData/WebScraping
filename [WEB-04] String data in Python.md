@@ -169,7 +169,7 @@ Out[21]: 'The price is $30'
 
 2. A VISA Electron card number has 16 digits. As in any credit card, the first digits identify the card issuer. In the case of VISA Electron, the **issuer identification number** (IIN) can be 4026, 417500, 4508, 4844, 4913 or 4917. Write a function which identifies VISA Electron card numbers. Check that your function does the job with a short list containing credit card numbers.
 
-3. You can see below a list containing the URL's for some **job postings** at the London-based financial technology company Wise. The sequence of digits in the middle of the URL make the ID of the position. Write a function which extracts a list of such URL's to a list containing their ID's.
+3. You can see below a list containing the URL's for some **job postings** at the London-based financial technology company Wise. The sequence of digits in the middle of the URL makes the ID of the position. Write a function which extracts a list of such URL's to a list containing their ID's.
 
 ```
 ['https://www.wise.jobs/role/3093508-design-director-onboarding-growth',
