@@ -1,4 +1,4 @@
-# Project - Get a look from Zalando
+# [WEB-07-P2] Project - Get a look from Zalando
 
 ## Introduction
 
