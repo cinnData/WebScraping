@@ -1,4 +1,4 @@
-# [WEB-06PA] Project - Barcelona restaurants in TripAdvisor [A]
+# [WEB-06P2] Project - Barcelona restaurants in TripAdvisor [A]
 
 ## Introduction
 
