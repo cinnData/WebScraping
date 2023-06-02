@@ -1,4 +1,4 @@
-# Project - Best restaurants in Barcelona according to TripAdvisor [1]
+# [WEB-02PA] Project - Best restaurants in Barcelona according to TripAdvisor [A]
 
 ## Introduction
 
