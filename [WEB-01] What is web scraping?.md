@@ -20,7 +20,6 @@ An extremely simple example of a HTML document follows. It is easy to see, in th
 
 ```
 <html>
-
 <head>
 
 	<title>Data Viz</title>
