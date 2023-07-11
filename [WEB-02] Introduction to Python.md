@@ -6,17 +6,15 @@
 
 ## The Anaconda distribution
 
-There are many distributions of Python. In the data science community, **Anaconda** (`anaconda.com`) is the favorite one. The current Anaconda distribution comes with Python 3.9. Downloading and installing Anaconda will leave you with the `Anaconda Navigator`, which opens in the browser and allows you to choose among different interfaces to Python.
+There are many distributions of Python. In the data science community, **Anaconda** (`anaconda.com`) is the favorite one. The current Anaconda distribution comes with Python 3.10. Downloading and installing Anaconda leaves you with the **Anaconda Navigator**, which opens in the browser and allows you to choose among different interfaces to Python.
 
-Among the many interfaces offered by Anaconda, I recommend you **Jupyter Qt Console**, which is an input/output text interface. Jupyter (Julia/Python/R) is a new name for an older project called **IPython** (Interactive Python). IPython's contribution was the IPython shell, which added some features to the mere Python language. Qt Console is the result of adding a graphical interface (GUI), with drop-down menus, mouse-clicking, etc, to the IPython shell, with a toolkit called Qt.
-
-Part of the popularity of the IPython shell was due to the **magic commands**, which were extra commands written as `%cmd. For instance, `%cd allowed you to change the **working directory**. These commands are not part of Python. Some textbooks and tutorials are still very keen on magic commands, which are occasionally mentioned in this course. To get more information about them, enter `%quickref` in the console. Although, in practice, you can omit the percentage sign (so `%cd` works exactly the same as cd), it is always safer to keep using it to distinguish the magic commands, which are NOT Python, from the Python code.
+Among those interfaces, the best choice for this course is **Jupyter Qt Console**, which is an input/output text interface. Jupyter (Julia/Python/R) is a new name for an older project called **IPython** (Interactive Python). IPython's contribution was the IPython shell, which added some features to the mere Python language. Qt Console is the result of adding a graphical interface (GUI), with drop-down menus, mouse-clicking, etc, to the IPython shell, with a toolkit called Qt.
 
 Jupyter provides an alternative approach, based on the **notebook** concept. In a notebook, you can combine input, output and ordinary text. In the notebook arena, **Jupyter Notebook** is the leading choice. Notebooks are multilingual, that is, they can be used with other languages, like R, besides Python. Most data scientists prefer the console for developing their code, but use notebooks for diffusion, specially for posting their work on platforms like GitHub.
 
-Besides the Jupyter tools, Anaconda also offers a Python IDE (Integrated Development Environment) called **Spyder**, where you can manage a console and a text editor for your code. If you have previous experience with this type of interface, for instance from working with R in RStudio, you may prefer Spyder to Qt Console.
+Besides the Jupyter apps, Anaconda also offers a Python IDE (Integrated Development Environment) called **Spyder**, where you can manage a console and a text editor for your code. If you have previous experience with this type of interface, for instance from working with R in RStudio, you may prefer Spyder to Qt Console.
 
-Alternatively, you can bypass the navigator calling those interfaces in a shell application. To start Qt Console, enter `jupyter qtconsole`. To get access to the notebooks in the default browser, enter `jupyter notebook`. To start Spyder, enter `spyder`.
+You can bypass the navigator calling those interfaces in a shell application. To start Qt Console, enter `jupyter qtconsole`. To get access to the notebooks in the default browser, enter `jupyter notebook`. To start Spyder, enter `spyder`.
 
 *Note*. Use *Terminal* in Mac and *Anaconda Prompt* in Windows. Don't use the standard Windows prompt, because it will not find the Anaconda apps unless you specify the path.
 
@@ -26,7 +24,7 @@ Let me assume that you are using Jupyter Qt Console, though almost everything wo
 
 As the browser, the console can have several tabs working independently. To open a new tab, enter either *Cmd+T* (Macintosh) or *Ctrl+T* (Windows), or use the menu *File >> New tab with New Kernel*. Each of these tabs is an interface between you and a Python kernel. These kernels run independently.
 
-The console produces input prompts (such as `In[1]:`), where you can type a command and press *Return*. Then Python returns either an output (preceded by `Out[1]:`, a (typically long and difficult) error message, or no answer at all. Here is a supersimple example:
+The console produces input prompts (such as `In[1]:`), where you can type a command and press *Return*. Then Python returns either an output (preceded by `Out[1]:`), an error message, or no answer at all. Here is a supersimple example:
 
 ```
 In [1]: 2 + 2
@@ -39,7 +37,7 @@ So, if you enter `2 + 2`, the output will be the result of this calculation. But
 In [2]: a = 2 + 2
 ```
 
-In Pyhton, when you use a name that is already taken, the old assignment is forgotten. Note that the value of 2 + 2 is not shown now. If you want to see it, you have to ask for that explicitly:
+In Pyhton, when you use a name that is already taken, that previous assignment is forgotten. Note that the value of 2 + 2 is not shown now (no output). If you want to see it, you have to ask for that explicitly:
 
 ```
 In [3]: a
@@ -48,7 +46,7 @@ Out[3]: 4
 
 The extra white space between the symbols is ignored by Python, but improves readability. So, it is recommended to allow the mathematical expressions to "breath". Also, note that Python is **case sensitive**:
 
-```{r eval=FALSE}
+```
 In [4]: A
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
@@ -71,15 +69,15 @@ Out[5]: 36
 
 ## Python packages
 
-Many additional resources have been added to Python in the form of **modules**. A module is just a text file containing Python code. Modules are grouped in libraries, also called **packages**, because their elements are packed according to some specific rules which allow you to install and call them together. Python can be extended by more than 300,000 packages. Some big packages, like scikit-learn, are not single modules, but collections of modules, which are then called subpackages.
+Many additional resources have been added to Python in the form of **modules**. A module is just a text file containing Python code. Modules are grouped in libraries, also called **packages**, because their elements are packed according to some specific rules which allow you to install and call them together. Python can be extended by more than 300,000 packages. Some big packages, like scikit-learn, are not single modules, but collections of modules, which are then called **subpackages**.
 
-Since the basic Python toolkit (without any package) is quite limited, you will need additional resources for practically everything. For instance, suppose that you want to do some math, and calculate the square root of 2. You will then **import** the package math, whose resources include the square root and many other mathematical functions. 
+Since the basic Python toolkit (without any package) is quite limited, you will need additional resources for practically everything. For instance, suppose that you want to calculate the square root of 2. You will then **import** the package `math`, whose resources include the square root and many other mathematical functions. 
 
 ```
 In [6]: import math
 ```
 
-Once the package has been imported, all its functions are available. You can then apply the function `math.sqrt`. This notation indicates that `sqrt` is a function of the module `math`. In the console, the square root calculation shows up as:
+Once the package has been imported, its functions are available. In this case, the function `math.sqrt` will do the job. This notation indicates that `sqrt` is a function of the module `math`. In the console, the square root calculation shows up as:
 
 ```
 In [7]: math.sqrt(2)
@@ -94,9 +92,11 @@ In [8]: from math import sqrt
 Out[8]: 1.4142135623730951
 ```
 
-We will use both ways in this course, following always the recommended import style. Packages are imported just for the current kernel. You finish the session by either closing the console or by restarting the kernel. You can do this with *Kernel >> Restart current Kernel* or by typing *Ctrl+.*.
+We will use both ways in this course, following always the recommended import style. Packages are imported just for the current kernel. 
 
-With Anaconda, most packages used in this course are already available and can be directly imported. If it is not the case, you have to **install** the package (only once). There is a basic installation procedure in Python, which uses a package installer called `pip` (see `pypi.org/project/pip`). Using pip you can have a conflict of versions between packages which are related. If this is the case, ayou can use an alternative installer called `conda`, which checks your Anaconda distribution, taking care of the conflicts. Mind that, due to all those checks, `conda` is much slower than `pip`.
+With Anaconda, most packages used in this course are already available and can be directly imported. If it is not the case, you have to **install** the package (only once). There is a basic installation procedure in Python, which uses a package installer called `pip` (see `pypi.org/project/pip`).
+
+When using `pip`, you may have a conflict of versions between packages which are related. If this is the case, you can use an alternative installer called `conda`, which checks your Anaconda distribution, taking care of the conflicts. Mind that, due to all those checks, `conda` is much slower than `pip`.
 
 ## Data types
 
@@ -121,7 +121,7 @@ In [11]: type('Miguel')
 Out[11]: str
 ```
 
-Strings are always enclosed by quote marks, either single or double (but same way on both sides). We also have **Boolean** (`bool`) data, which are either `True` or `False`:
+Strings are always enclosed by quote marks, either single or double (but in the same way on both sides). We also have **Boolean** (`bool`) data, which are either `True` or `False`:
 
 ```
 In [12]: type(True)
@@ -132,7 +132,7 @@ Mind that it is `True` and `False` in Python, not `TRUE` and `FALSE`, or `true` 
 
 ## Type conversions
 
-The functions `int` and `float` can be used to convert numbers from one type to another type (sometimes at a loss):
+The functions `int` and `float` can be used to convert numbers of one type to another type (sometimes at a loss):
 
 ```
 In [13]: float(2)
@@ -175,7 +175,7 @@ Out[19]: 0.0
 
 ## Comparison operators
 
-Let me show how the **comparison operators** work in Python. For sure, you know the *lower than* symbol:
+Let us see how the **comparison operators** work in Python. An example is provided by the *lower than* symbol:
 
 ```
 In [20]: 5 < a
@@ -189,7 +189,9 @@ In [21]: a == 4
 Out[21]: True
 ```
 
-Why two equal signs? The reason is that a single equal sign is used to assign names. So `a = 4` is interpreted, not as asking whether `a` is equal to `4`, but as creating a variable named `a` whose value is `4`. The *not equal* operator is denoted by an equal sign preceded by an admiration symbol (`!`):
+Why two equal signs? The reason is that the single equal sign is used to assign names. So `a = 4` is interpreted, not as asking whether `a` is equal to `4`, but as the definition of a variable named `a` whose value is `4`. 
+
+The *not equal* operator is denoted by an equal sign preceded by an exclamation mark (`!`):
 
 ```
 In [22]: a != 4
@@ -208,7 +210,7 @@ In [24]: 'A' <= 'a'
 Out[24]: True
 ```
 
-Numbers and booleans can be compared irrespective of their types:
+Numbers and booleans can always be compared, irrespective of their types:
 
 ```
 In [25]: 3 == 3.0
@@ -222,7 +224,7 @@ Out[26]: True
 
 ## Logical operators
 
-The **logical operators** allow operations between booleans. They are `and`, `or` a `not`. They work in the same way as in other languages: (a) `x and y` is true when both `x` and `y` are true, (b) `x or y` is true when at least one of them is true, and (c) `not x` is true when `x` is false. Examples:
+The **logical operators** allow operations between booleans. They are `and`, `or` and `not`. They work in the same way as in other languages: (a) `x and y` is true when both `x` and `y` are true, (b) `x or y` is true when at least one of them is true, and (c) `not x` is true when `x` is false. Examples:
 
 ```
 In [27]: True and False
@@ -248,9 +250,9 @@ Out[30]: True
 
 ## Functions
 
-A **function** takes a collection of **arguments** and performs an action. The functions that appear in this course will **return** a value and, sometimes, **print** a message. Besides the built-in functions like `type` and those coming in the packages that you may import, you can define your own functions. The definition will be forgotten when the session is closed, so you have to include it in your code.
+A **function** takes a collection of **arguments** and performs an action. The functions that appear in this course will **return** a value and, sometimes, **print** a message. To the **built-in functions** like `type` and those coming in the packages that you may import, you can add **user-defined** functions. These user-defined are forgotten when the kernel is stopped, so you have to include the definitions in your code files if you wish to reuse them.
 
-A simple example of a user-defined function follows. Note the indentation after the colon, which is created automatically by the Jupyter interface (either console or notebook).
+A simple example of a user-defined function follows. Note the indentation after the colon, which is created automatically by the Jupyter app (either console or notebook).
 
 ```
 In [31]: def f(x):
@@ -258,14 +260,14 @@ In [31]: def f(x):
     ...:     return y
 ```
 
-When you define a function, Python just takes note of the definition, accepting it when it is syntactically correct (parentheses, commas, etc). The function can be applied later to different arguments (during the same session).
+When you define a function, Python just takes note of the definition, accepting it as far as it is syntactically correct (parentheses, commas, etc). The function can be applied by the same kernel to different arguments.
 
 ```
 In [32]: f(2)
 Out[32]: -0.3333333333333333
 ```
 
-If you apply the function to an argument for which it does not make sense, Python will return an error message which depends on the values supplied for the argument.
+If you apply the function to an argument for which it does not make sense, Python returns an error message which depends on the values supplied for the argument.
 
 ```
 In [33]: f(1)
@@ -359,7 +361,7 @@ Equal
 
 ## While loops
 
-**Loops** are used in practically all programming languages. So, you are already familiar with them if you have programming experience. With loops, you avoid repeating code chunks. In particular, a `while` loop executes a code chunk until a stopping condition is met. The syntax is:
+**Loops** are used in practically all programming languages. They help the programmer to avoid repetition. In particular, a `while` loop executes a code chunk until a stopping condition is met. The syntax is:
 
 `while condition: action`
 
@@ -382,7 +384,7 @@ In [42]: x
 Out[42]: 32
 ```
 
-What if the condition is never met? Then, the loop will go on until you interrupt the process (*Ctrl+C*) or restart the kernel (*Ctrl+.*). An example follows, in which I have allowed the process to run for a few seconds:
+What if the condition is never met? Then, the loop will go on until you interrupt the process (*Ctrl+C*) or restart the kernel (*Ctrl+.*). An example follows, in which the process was allowed to run for a few seconds:
 
 ```
 In [43]: x = 1
@@ -405,7 +407,7 @@ Out[44]: 277583313
 
 1. Write a Python function which, given three integers, returns `True` if any of them is zero, and `False` otherwise.
 
-2. Write a Python function which, given three integers, returns `True` if they are in order from smallest to largest, and `False` otherwise. Modify your function so that it returns `1`/`0` instead of `True`/`False`.
+2. Write a Python function which, given three integers, returns `True` if they are ordered from smallest to largest, and `False` otherwise. Modify your function so that it returns `1`/`0` instead of `True`/`False`.
 
 3. Given two positive integers `a` and `b`, you can get the remainder of the integer division of `a` by `b` with `a%b`. So `7%3` returns `1`, and `9%5` returns `4`. Write a function which, given an integer, prints 'Yes, it is a multiple of 3' if that integer is a multiple of 3, and 'Bad luck!' otherwise.
 
