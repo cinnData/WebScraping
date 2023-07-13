@@ -36,7 +36,7 @@
 
 * `substr in str`: returns a Boolean indicating whether `substr` is contained in the `str`.
 
-## Methods from the package re
+## Functions from the package re
 
 * `re.findall(pat, str)`: extracts all the non-overlapping matches of the pattern `pat` in the string `str`, as a list. The pattern is read as a regular expression. `str` is scanned left-to-right, and the matches are returned in the order found. Empty matches (strings of zero length) are included in the result.
 
