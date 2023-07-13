@@ -1,6 +1,5 @@
 # Cheatsheet - Lists
 
-
 ## Extracting items from a list
 
 * `lst[n]`: extracts the item of the list `lst` whose index is `n`. Since Python starts counting at zero, this would be the item in place `n+1`.
