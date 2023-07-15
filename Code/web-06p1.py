@@ -1,4 +1,4 @@
-## Example - Finding a job at Netflix ##
+## [WEB-06P1] Project - Finding a job at Netflix ##
 
 # Downloading the source code #
 import requests
