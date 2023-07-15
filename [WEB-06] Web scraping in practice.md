@@ -2,7 +2,7 @@
 
 ## HTML and the browser
 
-Suppose that your browser (let us assume that you use Google Chrome) is displaying a web page on the screen. Right-clicking anywhere on the page opens a contextual menu. Select the *View Page Source* option. A new tab will open, displaying a HTML document. In most pages, this HTML document corresponds to the page that the browser was displaying. These pages are the ones covered in this chapter.
+Suppose that your browser (let us assume that you use Google Chrome) is displaying a web page on the screen. Right-clicking anywhere on the page opens a contextual menu. Then, selecting the *View Page Source* option, a new tab will open, displaying a HTML document. In the simplest case, which is the one covered in this lecture, this HTML document corresponds to the page that the browser was displaying. 
 
 But not all pages are that simple. Some use a technology called **AJAX** (Asynchronous JavaScript And XML) in two-step process as follows:
 
@@ -33,31 +33,28 @@ import requests
 html_str = requests.get(url).text
 ```
 
-`requests.get` returns a `requests` object (type `requests.models.Response`), containing data about the request. The attribute `text` of this object is a string which, for an ordinary web page, is the HTML source code. Now you can parse this string with the function `BeautifulSoup` from the package `bs4`, and then extract the information you are interested by means of the methods `find` and `find_all`. This information, after cleaning, can be exported to your preferred data format. Let us see below how to export the data to a CSV file.
+`requests.get` returns a `requests` object (type `requests.models.Response`), containing data about the request. The attribute `text` of this object is a string which, for an ordinary web page, is the HTML source code. Now you can parse this string with the function `BeautifulSoup` from the package `bs4`, and then extract the information sought by means of the methods `find` and `find_all`. This information, after cleaning, can be exported to your preferred data format. Let us see below how to export the data to a CSV file.
 
 ## Exporting to a CSV file
 
-There are many ways to export the data scraped to a CSV file in Python. The classic approach is based on the package `csv`, included in the standard library. To use this package, write your data set as a list in which every item is a list which contains the data from a row of the data set. Put the column names as the first row. Let us call this list `data`.
+In Python, there are many ways to export data to a CSV file. The classic approach is based on the package `csv`, included in the standard library. To use this package, some preparation is needed. Write your data set as a list in which every item is a list containing the data from a row of the data set. Put the column names as the first row. Let us call this list `data`. Now the data are ready to be exported.
 
-First, you import the package:
+First, you import the package `csv` and create a **connection**:
 
 ```
 import csv
+conn = open('path/filename.csv', mode='w', newline='', encoding='utf-8')
 ```
 
-The built-in function `open` creates a connection to an empty text file, assuming that the path makes sense in your computer. The mode can be `'r'` (read), `'w'`(write) or others. The argument `newline=''` is needed in Windows but not in Macintosh. If you omit it, a Windows computer will put extra blank lines between rows. If not specified, the encoding used by the new file is platform-dependent (meaning UTF-8 in Mac and various things in Windows, depending on your region). Assuming that you want to read again the data in Python, let us specify here `encoding='utf-8'`.
+The Python built-in function `open` creates a connection to an empty text file, assuming that the path makes sense in your computer. The mode can be `'r'` (read), `'w'`(write) or others. The argument `newline=''` is needed in Windows but not in Macintosh. If you omit it, a Windows computer will put extra blank lines between rows. If not specified, the encoding used by the new file is platform-dependent (meaning UTF-8 in Mac and various things in Windows, depending on your region). If you wish to read again the data in Python, specify `encoding='utf-8'`.
 
-```
-conn = open('fname.csv', mode='w', newline='', encoding='utf-8')
-```
-
-Next, we create a **CSV writer**. The default delimiter is the comma, but you can use `delimiter=';'` if you plan to open the CSV file with Excel and your Excel uses the semicolon as the column separator.  
+Next, we create a **CSV writer**. The default delimiter is the comma, but you can use `delimiter=';'` if you plan to open the CSV file with Excel and your computer uses the semicolon as the column separator.  
 
 ```
 writer = csv.writer(conn, delimiter=',')
 ```
 
-The method `writerows` writes the rows in the file:
+The method `writerows` writes the rows in the CSV file:
 
 ```
 writer.writerows(data)
@@ -69,11 +66,10 @@ Finally, we close the connection:
 conn.close()
 ```
 
-Practitioners pack this as:
+Practitioners pack all this as:
 
 ```
 with open('fname.csv', mode='w', newline='', encoding='utf-8') as conn:
     writer = csv.writer(conn, delimiter=',')
     writer.writerows(data)
 ```
-
