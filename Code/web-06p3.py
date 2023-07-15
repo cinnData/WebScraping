@@ -1,4 +1,4 @@
-## Example - Best restaurants in Barcelona according to TripAdvisor [2] ##
+## [WEB-06P3] Project - Best restaurants in Barcelona according to TripAdvisor [2] ##
 
 # Packages #
 import requests, re
