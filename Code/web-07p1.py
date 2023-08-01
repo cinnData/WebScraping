@@ -45,26 +45,23 @@ link[:5]
 title = [t.find('span', 'o-btn__label').text for t in block]
 len(title)
 title[:5]
-team = [t.find_all('span', 'o-tag__label')[0].text for t in block]
-len(team)
-team[:5]
+teamLocation = [t.find('p').text for t in block]
+len(teamLocation)
+teamLocation[:5]
 import re
-team = [re.sub('(^\s+)|(\s+$)', '', t) for t in team]
+team = [re.sub(', .+', '', t) for t in teamLocation]
 team[:5]
-location = [t.find_all('span', 'o-tag__label')[1].text for t in block]
+location = [re.sub('.+, ', '', t) for t in teamLocation]
 len(location)
-location[:5]
-location = [re.sub('(^\s+)|(\s+$)', '', l) for l in location]
 location[:5]
 
 # The same with with Selenium #
 block = browser.find_elements(By.CSS_SELECTOR, 'a.c-card')
 link = [b.get_attribute('href') for b in block]
 title = [b.find_element(By.CSS_SELECTOR, 'span.o-btn__label').text for b in block]
-team = [b.find_elements(By.CSS_SELECTOR, 'span.o-tag__label')[0].text for b in block]
-team = [re.sub('\n|\t', '', t) for t in team]
-location = [b.find_elements(By.CSS_SELECTOR, 'span.o-tag__label')[1].text for b in block]
-location = [re.sub('\n|\t', '', l) for l in location]
+teamLocation = [b.find_element(By.CSS_SELECTOR, 'p').text for b in block]
+team = [re.sub(', .+', '', t) for t in teamLocation]
+location = [re.sub('.+, ', '', t) for t in teamLocation]
 
 # Closing connection #
 browser.close()
