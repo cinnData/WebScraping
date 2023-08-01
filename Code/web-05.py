@@ -9,7 +9,7 @@ html_str = '<html>\
   <div class="course">Data Visualization</div>\
   <div class="program">MBA full-time</div>\
   <a class="professor" href="faculty-research/faculty/miguel-angel-canela">Miguel Ángel Canela</a>\
-</body> \
+</body>\
 </html>'
 html_str
 
