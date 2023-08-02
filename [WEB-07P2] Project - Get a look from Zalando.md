@@ -6,7 +6,7 @@
 
 Zalando was founded in Germany in 2008. Since 2013, following examples of tech companies from the East, especially China, Zalando transitioned into a European digital platform. Emulating Chinese companies, Zalando set off into remaking itself into a digital shopping mall, allowing fashion houses and retailers to make sales via the Partner Program as well, often with limited input from Zalando. 
 
-Zalando webpage in Spain is `zalando.es`. There are also separate pages for woman (`zalando.es/mujer-home`), man (`zalando.es/hombre-home`) and children (`zalando.es/nino-home`). Selecting the option *Get the look*, you access the page ` zalando.es/consigue-el-look-mujer`. There, you can find pictures of influencers, called at Zalando **creators**, showing their **looks**. 
+Zalando's webpage in Spain is `zalando.es`. There are also separate pages for woman (`zalando.es/mujer-home`), man (`zalando.es/hombre-home`) and children (`zalando.es/nino-home`). Selecting the option *Get the look*, you access the page ` zalando.es/consigue-el-look-mujer`. There, you can find pictures of influencers, called at Zalando **creators**, showing their **looks**. 
 
 Every picture has a link, which leads you to the look's page, and the name of the creator has another link which sends you the creator's page. For instance, the top left look (right now) is due to a creator called *babicatarine*, guilty of 9 looks. Clicking on the picture, you are sent to the page `zalando.es/outfits/47f4juSETte`, which displays information on the articles that make the look. Clicking on the name of the creator, you are sent to `zalando.es/creator/5920069a-7a73-4476-a74f-29488ab83a6f`, which contains information on the creator.
 
