@@ -1,4 +1,4 @@
-# [WEB-07P2] Project - Get a look from Zalando
+# Project - Get a look from Zalando
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Zalando webpage in Spain is `zalando.es`. There are also separate pages for woma
 
 Every picture has a link, which leads you to the look's page, and the name of the creator has another link which sends you the creator's page. For instance, the top left look (right now) is due to a creator called *babicatarine*, guilty of 9 looks. Clicking on the picture, you are sent to the page `zalando.es/outfits/47f4juSETte`, which displays information on the articles that make the look. Clicking on the name of the creator, you are sent to `zalando.es/creator/5920069a-7a73-4476-a74f-29488ab83a6f`, which contains information on the creator.
 
-Extracting information from this page has a specific problem not yet discussed in this course. After accepting cookies, you get a page which does not contain all the looks. More specifically, it contains 48 looks provided by creators, plus 4 sponsored looks. But the way you get the rest of the looks is not by clicking on a button, but by scrolling to the bottom of the page. You may have to scroll down more than 20 times to get the whole collection. By makig choices such as 'Clásico', 'Casual', 'Streetwear', etc, you get subcollections, for which less scrolling is needed. With **Selenium**, we can control the scrolling from a Python kernel.
+Extracting information from this page has a specific problem not yet discussed in this course. After accepting cookies, you get a page which does not contain all the looks. More specifically, it contains 48 looks provided either by creators, by Zalando itself, or by brands such as Timberland and Coach. But the way you get the rest of the looks is not by clicking on a button, but by scrolling to the bottom of the page. You may have to scroll down more than 20 times to get the whole collection. By makig choices such as 'Clásico', 'Casual', 'Streetwear', etc, you get subcollections, for which less scrolling is needed. With **Selenium**, we can control the scrolling from a Python kernel.
 
 ## The target data
 
@@ -23,6 +23,3 @@ The objective of this example is to collect information on the looks posted at `
 * `creator`, the creator's name. Example: 'babicatarine'.
 
 * `cre_link`, the link to the the page of the creator of that look, which contains information on the creator. Example: `zalando.es/creator/5920069a-7a73-4476-a74f-29488ab83a6f`.
-
-* `no_looks`, the number of looks of that creator.
-
