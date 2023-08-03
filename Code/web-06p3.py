@@ -110,8 +110,6 @@ for i in range(1, 451):
 data = [data1[i] + data2[i] for i in range(451)]
 
 # Writing to CSV file (edit path) #
-with open('trip.csv', 'w') as conn:
+with open('trip.csv', 'w', newline='') as conn:
 	writer = csv.writer(conn, delimiter=',')
 	writer.writerows(data)
-
-
