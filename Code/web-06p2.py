@@ -65,6 +65,6 @@ for i in range(15):
 
 # Writing to a CSV file (edit path) #
 import csv
-with open('trip1.csv', 'w', newline='') as conn:
+with open('trip1.csv', 'w', newline='', encoding='utf-8') as conn:
 	writer = csv.writer(conn, delimiter=',')
 	writer.writerows(data1)
