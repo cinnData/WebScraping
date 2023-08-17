@@ -16,11 +16,11 @@ block = soup.find_all('div', {'data-test': re.compile('[0-9]+_list_item')})
 len(block)
 blockname = [b.find_all('a')[1] for b in block]
 len(blockname)
-blockname[0]
-blockname[0].text
-rank = [int(re.sub('\..+', '', b.text)) for b in blockname]
+rankname = [b.text for b in blockname]
+rankname[:5]
+rank = [int(re.sub('\..+', '', b)) for b in rankname]
 rank[:5]
-name = [re.sub('[0-9]+\. ', '', b.text) for b in blockname]
+name = [re.sub('[0-9]+\. ', '', b) for b in rankname]
 name[:5]
 link = [b['href'] for b in blockname]
 link[:5]
