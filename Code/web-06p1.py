@@ -30,7 +30,7 @@ job[:5]
 job[-5:]
 
 # Location #
-location = soup.find_all('span', 'sort-by-location posting-category small-category-label')
+location = soup.find_all('span', 'sort-by-location posting-category small-category-label location')
 len(location)
 location = soup.find_all('span', 'sort-by-location')
 len(location)
